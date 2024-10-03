@@ -6,6 +6,7 @@ function Collections({ children }) {
       {/* Heading */}
       <div className="heading justify-center font-bold font-serif mt-8 text-3xl flex gap-2 items-center">
         {children} ---
+        
       </div>
       <p className='mx-auto text-center text-sm max-w-xl'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione corrupti inventore obcaecati fugit exercitationem.
