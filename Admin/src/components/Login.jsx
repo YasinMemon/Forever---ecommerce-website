@@ -9,9 +9,7 @@ function Login({ setToken }) {
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();    
-    const response = await axios.post('http://localhost:4000' + '/api/user/admin', {email, password});
-    console.log(response);
-    
+    const response = await axios.post('http://localhost:4000' + '/api/user/admin', {email, password});    
 
     if(response.data.message === true){
       setToken(response.data.adminToken);

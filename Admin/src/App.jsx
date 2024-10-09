@@ -25,8 +25,8 @@ export default function App() {
         <Sidebar />
         <div className="forms">
           <Routes>
-            <Route path="/add" element={<Add/>} ></Route>
-            <Route path="/list" element={<List/>} ></Route>
+            <Route path="/" element={<Add token={token} />}/>
+            <Route path="/list" element={<List token={token} />} />
           </Routes>
         </div>
       </div>

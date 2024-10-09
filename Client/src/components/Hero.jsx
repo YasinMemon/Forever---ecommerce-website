@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero() {
   return (
-    <div className="container mx-auto px-4 mt-10">
+    <div className="container mx-auto px-4 mt-10 overflow-x-hidden">
       <div className="flex flex-col md:flex-row justify-between items-center w-full md:w-[77%] mx-auto ring-1 ring-black">
         <div className="leftSide font-serif text-center md:w-1/2 space-y-4">
           <h3 className="font-bold text-lg md:text-xl ">----OUR BESTSELLERS</h3>

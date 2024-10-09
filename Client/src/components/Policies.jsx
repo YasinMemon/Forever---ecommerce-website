@@ -5,7 +5,7 @@ import { MdOutlineSupportAgent } from "react-icons/md";
 
 function Policies() {
   return (
-    <div className='w-[75vw] mx-auto my-32 flex '>
+    <div className='w-[75vw] mx-auto my-32 flex overflow-x-hidden'>
     <div className="exchange mx-auto text-center font-bold">
       <MdCurrencyExchange className='text-5xl text-center w-full'/>
         <h3 className='text-base'>Easy Exchange Policy</h3>

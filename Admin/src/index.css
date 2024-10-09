@@ -7,3 +7,12 @@
     color: white;
     border: 1px solid white;
 }
+
+body{
+    overflow-x: hidden;
+    min-width: 100%;
+    margin: auto;
+}
+*{
+    overflow-x: hidden;
+}

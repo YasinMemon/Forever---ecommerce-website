@@ -7,25 +7,25 @@ import { NavLink } from 'react-router-dom'
 function Sidebar() {
   return <div className="border-r h-[86vh] border-black">
     <NavLink
-       to='/add'
-       className="remoe cursor-pointer flex items-center my-6 ml-20 border pr-20 pl-2 border-black py-3 gap-2"
+       to='/'
+       className="remoe cursor-pointer sm:mr-4 flex items-center my-6 sm:ml-20 sm:border sm:pr-20 pl-2 pr-2 border-black py-3 gap-2"
        >
         <IoAddCircle/>
-        <p>Add Items</p>
+        <p className='hidden sm:block'>Add Items</p>
         </NavLink>
       <NavLink
        to='/list'
-       className="remoe cursor-pointer flex items-center my-6 ml-20 border pr-20 pl-2 border-black py-3 gap-2"
+       className="remoe cursor-pointer sm:mr-4 flex items-center my-6 sm:ml-20 sm:border sm:pr-20 pl-2 pr-2 border-black py-3 gap-2"
        >
         <FaClipboardList/>
-        <p>List Items</p>
+        <p className='hidden sm:block'>List Items</p>
       </NavLink>
       <NavLink
        to='/orders'
-       className="remoe cursor-pointer flex items-center my-6 ml-20 border pr-20 pl-2 border-black py-3 gap-2"
+       className="remoe cursor-pointer sm:mr-4 flex items-center my-6 sm:ml-20 sm:border sm:pr-20 px-2 border-black py-3 gap-2"
        >
         <FaClipboardList/>
-        <p>Orders</p>
+        <p className='hidden sm:block'>Orders</p>
       </NavLink>
     </div>
   
