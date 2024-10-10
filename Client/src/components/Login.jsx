@@ -17,8 +17,6 @@ function Login({ setToken }) {
   };
 
   const inputClear = () => {
-    console.log("clearing");
-
     setEmail("");
     setName("");
     setConfirmation("");
