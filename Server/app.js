@@ -15,7 +15,7 @@ connectCloudinary();
 
 app.use(
     cors({
-      origin: { "https://forever-frontend-g1hw.onrender.com/", "https://deluxe-starburst-9313c0.netlify.app/" }  // Allows requests from any origin
+      origin: [ "https://forever-frontend-g1hw.onrender.com/", "https://deluxe-starburst-9313c0.netlify.app/" ]  // Allows requests from any origin
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow specific HTTP methods
       allowedHeaders: ['Content-Type', 'Authorization'], // Allow certain headers
       preflightContinue: false,
