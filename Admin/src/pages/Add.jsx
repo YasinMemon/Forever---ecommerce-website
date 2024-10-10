@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 function Add({ token }) {
   const [img1, setImg1] = useState(false);
@@ -25,33 +25,33 @@ function Add({ token }) {
   };
 
   const formData = new FormData();
-  
-  formData.append('img1', img1 || '');
-  formData.append('img2', img2 || '');
-  formData.append('img3', img3 || '');
-  formData.append('img4', img4 || '');
-  formData.append('name', name);
-  formData.append('description', description);
-  formData.append('category', category);
-  formData.append('subCategory', subCategory);
-  formData.append('price', price);
-  formData.append('sizes', JSON.stringify(sizes));
-  formData.append('bestSeller', bestSeller);
+
+  formData.append("img1", img1 || "");
+  formData.append("img2", img2 || "");
+  formData.append("img3", img3 || "");
+  formData.append("img4", img4 || "");
+  formData.append("name", name);
+  formData.append("description", description);
+  formData.append("category", category);
+  formData.append("subCategory", subCategory);
+  formData.append("price", price);
+  formData.append("sizes", JSON.stringify(sizes));
+  formData.append("bestSeller", bestSeller);
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/products/add",
+        "https://forever-ecommerce-website.onrender.com/api/products/add",
         formData,
-        { headers: { Authorization: `Bearer ${token}`}}
-      )
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
       toast.success(response.data.message);
-      setName('');
-      setDescription('');
-      setCategory('Men');
-      setSubCategory('Topwear');
-      setPrice('');
+      setName("");
+      setDescription("");
+      setCategory("Men");
+      setSubCategory("Topwear");
+      setPrice("");
       setSizes([]);
       setBestSeller(false);
       setImg1(false);

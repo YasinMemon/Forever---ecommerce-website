@@ -18,7 +18,7 @@ function Login({ setToken }) {
 
   const inputClear = () => {
     console.log("clearing");
-    
+
     setEmail("");
     setName("");
     setConfirmation("");
@@ -29,8 +29,8 @@ function Login({ setToken }) {
     inputClear();
     const url =
       currentPage === "login"
-        ? "http://localhost:4000/api/user/login"
-        : "http://localhost:4000/api/user/register";
+        ? "https://forever-ecommerce-website.onrender.com/api/user/login"
+        : "https://forever-ecommerce-website.onrender.com/api/user/register";
 
     try {
       const response = await axios.post(url, { name, email, password });

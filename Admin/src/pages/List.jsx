@@ -1,28 +1,31 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { toast } from 'react-toastify'
+import { toast } from "react-toastify";
 
 function List({ token }) {
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
-    const response = await axios.get("http://localhost:4000/api/products/list");
+    const response = await axios.get(
+      "https://forever-ecommerce-website.onrender.com/api/products/list"
+    );
     setList(response.data.products);
   };
 
-  const removeItem = async (id) => {  
+  const removeItem = async (id) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/products/remove", 
-      { id },
-      {headers: {Authorization: `Bearer ${token}`}});
+        "https://forever-ecommerce-website.onrender.com/api/products/remove",
+        { id },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
       toast.success(response.data.message);
       fetchList();
     } catch (error) {
       console.log(error);
     }
     await fetchList();
-  }
+  };
 
   useEffect(() => {
     fetchList();
@@ -30,7 +33,9 @@ function List({ token }) {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <p className="text-2xl font-bold text-center my-6 text-indigo-600">All Products List</p>
+      <p className="text-2xl font-bold text-center my-6 text-indigo-600">
+        All Products List
+      </p>
 
       {/* Table Header */}
       <div className="grid grid-cols-4 sm:grid-cols-5 gap-4 justify-items-center bg-gray-100 py-3 border-b-[2px] font-semibold border-gray-400 w-[90vw] sm:w-[85vw] md:w-[80vw] lg:w-[75vw] max-w-[1200px] rounded-md">
@@ -57,7 +62,9 @@ function List({ token }) {
                 />
               </div>
               <div className="text-center  md:text-left overflow-hidden">
-                <p className="font-medium text-xs sm:text-lg text-indigo-700 truncate">{item.name}</p>
+                <p className="font-medium text-xs sm:text-lg text-indigo-700 truncate">
+                  {item.name}
+                </p>
               </div>
               <div className="text-center hidden sm:inline-block md:text-left overflow-hidden">
                 <p className="text-gray-600 line-clamp-2">{item.description}</p>
@@ -66,9 +73,10 @@ function List({ token }) {
                 <p className="text-gray-500">{item.category}</p>
               </div>
               <div className="flex justify-center">
-                <button 
-                onClick={() => removeItem(item._id)}
-                className="bg-red-500 text-white py-1 px-3 rounded-lg font-bold hover:bg-red-600 transition">
+                <button
+                  onClick={() => removeItem(item._id)}
+                  className="bg-red-500 text-white py-1 px-3 rounded-lg font-bold hover:bg-red-600 transition"
+                >
                   X
                 </button>
               </div>
