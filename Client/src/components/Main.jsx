@@ -8,19 +8,7 @@ import Login from "./Login";
 import SpinnerL from "./SpinnerL";
 import axios from "axios";
 
-function Main({ setToken,token }) {
-
-  const [product, setProducts] = useState([]);
-  useEffect(() => {
-    const productFetching = async () => {
-      const response = await axios.get(
-        "https://forever-ecommerce-website.onrender.com/api/products/list"
-      );
-      setProducts(response.data.products);
-    };
-
-    productFetching();
-  }, []);
+function Main({ setToken,token, product }) {
 
   return (
     <div className="overflow-x-hidden w-auto">

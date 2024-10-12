@@ -27,7 +27,7 @@ function CheckOut() {
     
   }
   return (
-    <div className='w-[75vw] mx-auto flex justify-between items-center'>
+    <div className='w-[75vw] mx-auto flex flex-col sm:flex-row justify-between items-center'>
         <div>
             <DeliveryForm formData={formData} handleInputChange={handleInputChange} />
         </div>

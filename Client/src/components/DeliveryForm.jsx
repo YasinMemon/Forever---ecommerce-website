@@ -2,12 +2,12 @@ import React from 'react'
 
 function DeliveryForm({ formData,handleInputChange }) {
   return (
-    <form className='flex flex-col w-[40vw] py-14 px-6'>
+    <form className='flex flex-col sm:w-[40vw] sm:py-14 py-6 sm:px-6'>
       <h1 className='font-bold text-xl mb-4'>Delivery Information...</h1>
-        <div className='flex gap-4'>
+        <div className='flex sm:gap-4 gap-1'>
         <input 
         onChange={handleInputChange}
-        className='  pl-1 w-full outline-none border-none bg-slate-200 text-lg rounded my-1 px-2 h-10'
+        className='sm:pl-1 w-full outline-none border-none bg-slate-200 text-lg rounded my-1 px-2 h-10'
         placeholder='first name'
         name='fname'
         type="text" />

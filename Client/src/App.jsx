@@ -11,9 +11,22 @@ import { useEffect, useState } from "react";
 import CheckOut from "./components/CheckOut.jsx";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
+import axios from "axios";
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem('userToken') || "");
+
+  const [product, setProducts] = useState([]);
+  useEffect(() => {
+    const productFetching = async () => {
+      const response = await axios.get(
+        "https://forever-ecommerce-website.onrender.com/api/products/list"
+      );
+      setProducts(response.data.products);
+    };
+
+    productFetching();
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("userToken", token);
@@ -23,8 +36,8 @@ export default function App() {
     <Router>
     <Navbar token={token} setToken={setToken} />
       <Routes>
-        <Route path="/" element={<Main token={token} setToken={setToken} />} ></Route>
-        <Route path="/collections" element={<CollectionPage/>}></Route>
+        <Route path="/" element={<Main product={product} token={token} setToken={setToken} />} ></Route>
+        <Route path="/collections" element={<CollectionPage product={product} />}></Route>
         <Route path="/product/:id" element={<Product/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/checkout" element={<CheckOut/>}/>
