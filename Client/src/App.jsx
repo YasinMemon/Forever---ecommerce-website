@@ -9,6 +9,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useEffect, useState } from "react";
 import CheckOut from "./components/CheckOut.jsx";
+import About from "./components/About.jsx";
+import Contact from "./components/Contact.jsx";
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem('userToken') || "");
@@ -26,6 +28,8 @@ export default function App() {
         <Route path="/product/:id" element={<Product/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/checkout" element={<CheckOut/>}/>
+        <Route path="/about" element={<About/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
       </Routes>
     <Footer/>
     </Router>

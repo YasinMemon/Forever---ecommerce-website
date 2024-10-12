@@ -40,8 +40,12 @@ function Navbar({token, setToken}) {
           <li><NavLink onClick={() => setIsOpen((prev) => !prev)}
           className={`${((isActive) => isActive ? 'underline' : '')}`}
           to={`${token ? '/collections' : '/'} `} >COLLECTION</NavLink></li>
-          <li>ABOUT</li>
-          <li>CONTACT</li>
+          <li><NavLink onClick={() => setIsOpen((prev) => !prev)}
+          className={`${((isActive) => isActive ? 'underline' : '')}`}
+          to={`${token ? '/about' : '/'} `} >ABOUT</NavLink></li>
+          <li><NavLink onClick={() => setIsOpen((prev) => !prev)}
+          className={`${((isActive) => isActive ? 'underline' : '')}`}
+          to={`${token ? '/contact' : '/'} `} >CONTACT US</NavLink></li>
           <li className='hidden md:block'><button className="ring-1 ring-black text-sm px-4 py-2 rounded-full">
               Admin Panel
             </button></li>

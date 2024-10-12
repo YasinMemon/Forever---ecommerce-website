@@ -2,15 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Collections({ children }) {
-  const [products, setProducts] = useState();
-
-  const productFetching = async () => {
-    const response = await axios.get(
-      "https://forever-ecommerce-website.onrender.com//api/products/list"
-    );
-    setProducts(response.data.products);
-  };
+function Collections({ children, products }) {
 
   const navigate = useNavigate();
 
@@ -25,10 +17,6 @@ function Collections({ children }) {
       },
     });
   };
-
-  useEffect(() => {
-    productFetching();
-  }, []);
 
   return (
     <div className="md:w-[74vw] mx-auto overflow-x-hidden">
