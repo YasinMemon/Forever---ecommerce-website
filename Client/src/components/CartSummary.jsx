@@ -23,7 +23,8 @@ function CartSummary() {
                 <p>₹{total + 26}</p>
             </div>
             <div className="submit mt-6 text-right">
-                <button className="uppercase bg-black text-white font-bold px-4 py-2 rounded">
+                <button 
+                className="uppercase bg-black text-white font-bold px-4 py-2 rounded">
                   <NavLink to='/checkout'>
                     Proceed to Checkout
                   </NavLink>

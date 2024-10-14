@@ -1,6 +1,7 @@
 import React from 'react'
 
 function DeliveryForm({ formData,handleInputChange }) {
+  
   return (
     <form className='flex flex-col sm:w-[40vw] sm:py-14 py-6 sm:px-6'>
       <h1 className='font-bold text-xl mb-4'>Delivery Information...</h1>

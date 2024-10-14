@@ -20,7 +20,7 @@ export default function App() {
   useEffect(() => {
     const productFetching = async () => {
       const response = await axios.get(
-        "https://forever-ecommerce-website.onrender.com/api/products/list"
+        "http://localhost:4000/api/products/list"
       );
       setProducts(response.data.products);
     };

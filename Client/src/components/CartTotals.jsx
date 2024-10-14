@@ -27,11 +27,13 @@ function CartTotals({ handleSubmit }) {
           <p className="font-bold">Select Payment Method</p>
         </div>
         <div className="submit mt-6 text-right">
-          <form onSubmit={handleSubmit} >
-            <button type="submit" className="uppercase bg-black text-white font-bold px-4 py-2 rounded">
-              <NavLink to="/checkout">Place order</NavLink>
+          {/* <form onSubmit={handleSubmit} > */}
+            <button 
+            onClick={handleSubmit}
+            type="submit" className="uppercase bg-black text-white font-bold px-4 py-2 rounded">
+              Place order
             </button>
-          </form>
+          {/* </form> */}
         </div>
       </div>
     </div>

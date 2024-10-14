@@ -9,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 const multer = require("multer");
 const cors = require("cors");
+const OrderRouter = require("./routes/OrderRoute.js");
 
 connectDB();
 connectCloudinary();
@@ -27,7 +28,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api/user", userRouter);
 app.use("/api/products", productRouter);
-
+app.use("/api/orders", OrderRouter);
 
 app.get("/", (req, res) => {
   res.send("<h1> all set <h1/>");

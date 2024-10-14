@@ -7,6 +7,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Add from "./pages/Add";
 import List from "./pages/List";
+import Orders from "./pages/Orders";
+import OrderDetails from "./pages/OrderDetails";
 
 export default function App() {
   const [token, setToken] = useState(localStorage.getItem('token') || '');
@@ -27,6 +29,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Add token={token} />}/>
             <Route path="/list" element={<List token={token} />} />
+            <Route path="/orders" element={<Orders />} />
+            <Route path="/order-details/:id" element={<OrderDetails />} /> 
           </Routes>
         </div>
       </div>
