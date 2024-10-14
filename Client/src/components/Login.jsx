@@ -11,7 +11,9 @@ function Login({ setToken }) {
   const [email, setEmail] = useState("");
 
   const currentPageHandler = () => {
-    currentPage === "login" ? setCurrentPage("signup") : setCurrentPage("login");
+    currentPage === "login"
+      ? setCurrentPage("signup")
+      : setCurrentPage("login");
   };
 
   const inputClear = () => {
@@ -26,8 +28,8 @@ function Login({ setToken }) {
     inputClear();
     const url =
       currentPage === "login"
-        ? "https://forever-ecommerce-website.onrender.com/api/user/login"
-        : "https://forever-ecommerce-website.onrender.com/api/user/register";
+        ? "https://forever-ecommerce-website.vercel.app/api/user/login"
+        : "https://forever-ecommerce-website.vercel.app/api/user/register";
 
     try {
       const response = await axios.post(url, { name, email, password });
@@ -56,7 +58,9 @@ function Login({ setToken }) {
     >
       <div className="ring-1 w-full sm:w-auto ring-black flex flex-col bg-pink-100 p-6 sm:p-8 lg:p-10 rounded-lg shadow-xl">
         <h1 className="text-lg sm:text-xl font-bold font-serif mb-4">
-          {currentPage === "login" ? "Login to your account" : "Create your account"}
+          {currentPage === "login"
+            ? "Login to your account"
+            : "Create your account"}
         </h1>
 
         {/* Name input (visible only in signup) */}
@@ -91,7 +95,9 @@ function Login({ setToken }) {
 
         {/* Password input */}
         <label htmlFor="password" className="font-serif mt-2">
-          {currentPage === "login" ? "Enter your Password" : "Create a Strong Password"}
+          {currentPage === "login"
+            ? "Enter your Password"
+            : "Create a Strong Password"}
         </label>
         <input
           value={password}

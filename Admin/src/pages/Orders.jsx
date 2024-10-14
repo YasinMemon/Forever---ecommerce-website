@@ -11,10 +11,13 @@ function Orders({ token }) {
   const fetchOrders = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:4000/api/orders/show", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-    
+      const response = await axios.get(
+        "https://forever-ecommerce-website.vercel.app/api/orders/show",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
       setOrders(response.data);
       setLoading(false);
     } catch (error) {

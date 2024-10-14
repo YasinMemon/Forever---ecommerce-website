@@ -7,7 +7,7 @@ function List({ token }) {
 
   const fetchList = async () => {
     const response = await axios.get(
-      "https://forever-ecommerce-website.onrender.com/api/products/list"
+      "https://forever-ecommerce-website.vercel.app/api/products/list"
     );
     setList(response.data.products);
   };
@@ -15,7 +15,7 @@ function List({ token }) {
   const removeItem = async (id) => {
     try {
       const response = await axios.post(
-        "https://forever-ecommerce-website.onrender.com/api/products/remove",
+        "https://forever-ecommerce-website.vercel.app/api/products/remove",
         { id },
         { headers: { Authorization: `Bearer ${token}` } }
       );

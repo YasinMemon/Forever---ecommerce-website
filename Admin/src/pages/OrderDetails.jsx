@@ -14,8 +14,9 @@ function OrderDetails({ token }) {
     setLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/orders/order/${id}`, {
-          headers: { Authorization: `Bearer ${token}` } // Add token to the request
+        `https://forever-ecommerce-website.vercel.app/api/orders/order/${id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` }, // Add token to the request
         }
       );
       setOrder(response.data.order); // Assuming the response contains an `order` field
@@ -31,7 +32,7 @@ function OrderDetails({ token }) {
     try {
       // Assuming the backend API accepts the order
       await axios.post(
-        `http://localhost:4000/api/orders/accept/${id}`,
+        `https://forever-ecommerce-website.vercel.app/api/orders/accept/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -47,7 +48,7 @@ function OrderDetails({ token }) {
     try {
       // Assuming the backend API declines the order
       await axios.post(
-        `http://localhost:4000/api/orders/decline/${id}`,
+        `https://forever-ecommerce-website.vercel.app/api/orders/decline/${id}`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -74,25 +75,45 @@ function OrderDetails({ token }) {
       {order && (
         <div className="bg-white shadow-lg rounded-lg p-6 max-w-4xl w-full">
           {/* Display the product name from the first item in the `items` array */}
-          <p><strong>Product:</strong> {order.items[0]?.name}</p>
+          <p>
+            <strong>Product:</strong> {order.items[0]?.name}
+          </p>
 
           {/* Display customer information */}
-          <p><strong>Customer:</strong> {order.firstName} {order.lastName}</p>
-          <p><strong>Email:</strong> {order.email}</p>
-          <p><strong>Address:</strong> {order.street}, {order.city}, {order.state} - {order.zipcode}</p>
-          <p><strong>Phone:</strong> {order.phone}</p>
+          <p>
+            <strong>Customer:</strong> {order.firstName} {order.lastName}
+          </p>
+          <p>
+            <strong>Email:</strong> {order.email}
+          </p>
+          <p>
+            <strong>Address:</strong> {order.street}, {order.city},{" "}
+            {order.state} - {order.zipcode}
+          </p>
+          <p>
+            <strong>Phone:</strong> {order.phone}
+          </p>
 
           {/* Display the product size */}
-          <p><strong>Size:</strong> {order.items[0]?.size}</p>
+          <p>
+            <strong>Size:</strong> {order.items[0]?.size}
+          </p>
 
           {/* Display order amount */}
-          <p><strong>Amount:</strong> ${order.Amount}</p>
+          <p>
+            <strong>Amount:</strong> ${order.Amount}
+          </p>
 
           {/* Display order status */}
-          <p><strong>Status:</strong> {order.status}</p>
+          <p>
+            <strong>Status:</strong> {order.status}
+          </p>
 
           {/* Display order date */}
-          <p><strong>Order Date:</strong> {new Date(order.orderDate).toLocaleString()}</p>
+          <p>
+            <strong>Order Date:</strong>{" "}
+            {new Date(order.orderDate).toLocaleString()}
+          </p>
 
           {/* Accept and Decline Buttons */}
           <div className="mt-4 flex justify-around">

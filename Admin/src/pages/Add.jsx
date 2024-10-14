@@ -42,7 +42,7 @@ function Add({ token }) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://forever-ecommerce-website.onrender.com/api/products/add",
+        "https://forever-ecommerce-website.vercel.app/api/products/add",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
