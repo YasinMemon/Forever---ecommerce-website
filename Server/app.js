@@ -14,16 +14,8 @@ const OrderRouter = require("./routes/OrderRoute.js");
 connectDB();
 connectCloudinary();
 
-app.use(
-    cors({
-      origin: "https://extraordinary-crepe-2b29f2.netlify.app/",  // Allows requests from any origin
-      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow specific HTTP methods
-      allowedHeaders: ['Content-Type', 'Authorization'], // Allow certain headers
-      preflightContinue: false,
-      optionsSuccessStatus: 204
-}));
+app.use(cors());
 
-app.options('*', cors()); // Preflight request for all routes
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api/user", userRouter);
