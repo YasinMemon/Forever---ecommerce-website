@@ -42,7 +42,7 @@ function Add({ token }) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://forever-ecommerce-bay.vercel.app/api/products/add",
+        "https://forever-ecommerce-h2c73n5t8-yasin-s-projects-848f920c.vercel.app/api/products/add",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
