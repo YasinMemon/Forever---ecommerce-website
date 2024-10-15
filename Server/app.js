@@ -16,7 +16,7 @@ connectCloudinary();
 
 app.use(
     cors({
-      origin: "*",  // Allows requests from any origin
+      origin: "http://localhost:5173/",  // Allows requests from any origin
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow specific HTTP methods
       allowedHeaders: ['Content-Type', 'Authorization'], // Allow certain headers
       preflightContinue: false,

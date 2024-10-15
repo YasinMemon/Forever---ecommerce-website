@@ -42,7 +42,7 @@ function Add({ token }) {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://forever-ecommerce-website.vercel.app/api/products/add",
+        "https://forever-ecommerce-bay.vercel.app/api/products/add",
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -59,7 +59,7 @@ function Add({ token }) {
       setImg3(false);
       setImg4(false);
     } catch (error) {
-      toast.error(response.data.message);
+      toast.error(error.message);
     }
   };
 
